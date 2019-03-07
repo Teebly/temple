@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'babrahams:temple',
+  name: 'teebly:temple',
   version: '0.4.7',
   summary: 'Developer tool that provides visual information about templates',
   git: 'https://github.com/JackAdams/temple.git',
@@ -28,7 +28,7 @@ Package.onUse(function(api) {
 Package.onTest(function(api) {
     
   api.use('tinytest');
-  api.use('babrahams:temple');
+  api.use('teebly:temple');
   api.addFiles('temple-tests.js');
 
 });
