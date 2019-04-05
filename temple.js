@@ -101,12 +101,15 @@ Template.body.events({
       if (target.length && !$(target).closest('#Constellation').length) {
         if (!Temple.dict.get('Temple_freeze_data') || evt.type === 'click') {
           let data = Blaze.getData(target[0]);
-          let template = Blaze.getView(target[0]).templateInstance();
-          Object.keys(template).forEach( t => {
-            if(template[t] instanceof ReactiveVar){
-              data[`RV_${t}`] = template[t].get();
-            }
-          })
+          let view = Blaze.getView(target[0]);
+          if (view) {
+            let template = view.templateInstance();
+            Object.keys(template).forEach(t => {
+              if (template[t] instanceof ReactiveVar) {
+                data[`RV_${t}`] = template[t].get();
+              }
+            })
+          }
           Temple.dict.set('Temple_current_context', data);
           if (!!Constellation && Constellation.tabVisible('temple','plugin')) {
             // Change the breadcrumbs
