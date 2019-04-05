@@ -102,7 +102,7 @@ Template.body.events({
         if (!Temple.dict.get('Temple_freeze_data') || evt.type === 'click') {
           let data = Blaze.getData(target[0]);
           let view = Blaze.getView(target[0]);
-          if (view) {
+          if (view && view.templateInstance) {
             let template = view.templateInstance();
             Object.keys(template).forEach(t => {
               if (template[t] instanceof ReactiveVar) {
