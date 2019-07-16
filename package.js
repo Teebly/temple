@@ -1,6 +1,6 @@
 Package.describe({
   name: 'teebly:temple',
-  version: '0.4.8',
+  version: '0.4.9',
   summary: 'Developer tool that provides visual information about templates',
   git: 'https://github.com/JackAdams/temple.git',
   documentation: 'README.md',
